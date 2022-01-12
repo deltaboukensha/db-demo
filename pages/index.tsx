@@ -26,7 +26,7 @@ const renderItem = (itemData: ItemData) => {
     setImageIndex((imageIndex + 1) % itemData.images.length);
 
   return (
-    <Stack className="mouseHover">
+    <Stack>
       <Zoom in={true}>
         <Paper
           elevation={3}
