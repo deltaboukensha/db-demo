@@ -62,7 +62,7 @@ const dbWebGlRipples = {
   title: "db-webgl-ripples",
   description: `A webgl demo of water ripple effects with webgl-shaders.
   Uses webgl, glsl, vertex-shaders, fragment-shaders, framebuffers`,
-  link: "https://deltaboukensha.github.io/db-webgl-ripples",
+  link: "https://db-webgl-ripples.web.app/",
 } as ItemData;
 
 const dbUnityBunny = {
