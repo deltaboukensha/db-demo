@@ -32,7 +32,7 @@ const renderItem = (itemData: ItemData) => {
           elevation={3}
           sx={{
             "&:hover": {
-              transform: "translateY(-1em) !important",
+              backgroundColor: "#F5F8FA"
             },
           }}
         >
