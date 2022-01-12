@@ -121,9 +121,10 @@ Uses JavaScript, Java, Android
 const index = () => (
   <>
     <Helmet>
-      <title>Delta Boukensha - GitHub</title>
+      <title>db-demo</title>
+      <meta name="title" content="Default Title" data-react-helmet="true" />
     </Helmet>
-    <h1>Welcome to Delta Boukensha's GitHub Page</h1>
+    <h1>Welcome to the demo page by Delta Boukensha </h1>
     <p>
       A portfolio of some of my projects. For more projects see{" "}
       <Button href="https://github.com/deltaboukensha">My GitHub</Button> page
