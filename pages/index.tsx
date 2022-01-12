@@ -1,13 +1,10 @@
 import React, { useState } from "react";
 import { Helmet } from "react-helmet";
-import Card from "@mui/material/Card";
-import CardContent from "@mui/material/CardContent";
 import Typography from "@mui/material/Typography";
-import { Zoom, Stack, Button, Fab } from "@mui/material";
+import { Zoom, Stack, Button, Paper, Box } from "@mui/material";
 import Masonry from "@mui/lab/Masonry";
-import NavigateNextIcon from "@mui/icons-material/NavigateNext";
 
-type CardData = {
+type ItemData = {
   images: string[];
   title: string;
   description: string;
@@ -23,17 +20,20 @@ const renderImage = (src) => {
   );
 };
 
-const renderCard = (cardData: CardData) => {
+const renderItem = (itemData: ItemData) => {
   const [imageIndex, setImageIndex] = useState<number>(0);
   const nextImage = () =>
-    setImageIndex((imageIndex + 1) % cardData.images.length);
+    setImageIndex((imageIndex + 1) % itemData.images.length);
 
   return (
     <Stack>
       <Zoom in={true}>
-        <Card variant="outlined">
-          <div style={{ position: "relative", width: "100%", height: "256px" }} onClick={() => nextImage()}>
-            {renderImage(cardData.images[imageIndex])}
+        <Paper elevation={3}>
+          <div
+            style={{ position: "relative", width: "100%", height: "256px" }}
+            onClick={() => nextImage()}
+          >
+            {renderImage(itemData.images[imageIndex])}
             {/* {cardData.images.length > 1 && (
               <Fab
                 size="small"
@@ -45,16 +45,16 @@ const renderCard = (cardData: CardData) => {
               </Fab>
             )} */}
           </div>
-          <CardContent>
+          <Box padding={"1em"}>
             <Typography gutterBottom variant="h5" component="div">
-              {cardData.title}
+              {itemData.title}
             </Typography>
             <Typography variant="body2" color="text.secondary">
-              {cardData.description}
+              {itemData.description}
             </Typography>
-            <Button href={cardData.link}>Goto</Button>
-          </CardContent>
-        </Card>
+            <Button href={itemData.link}>Goto</Button>
+          </Box>
+        </Paper>
       </Zoom>
     </Stack>
   );
@@ -66,7 +66,7 @@ const dbWebGlRipples = {
   description: `A webgl demo of water ripple effects with webgl-shaders.
   Uses webgl, glsl, vertex-shaders, fragment-shaders, framebuffers`,
   link: "https://deltaboukensha.github.io/db-webgl-ripples",
-} as CardData;
+} as ItemData;
 
 const dbUnityBunny = {
   images: ["/images/db-unity-bunny-1.png"],
@@ -74,7 +74,7 @@ const dbUnityBunny = {
   description: `A Unity C# game project I started together with my girl friend featuring bunny's
   The goal of the game is yet to be decided`,
   link: "https://deltaboukensha.github.io/db-unity-bunny",
-} as CardData;
+} as ItemData;
 
 const dbDiary = {
   images: ["/images/db-diary-1.png", "/images/db-diary-2.png"],
@@ -83,7 +83,7 @@ const dbDiary = {
   A mobile targeted web project.
   Uses TypeScript, Firebase, Nextjs, SPA, PWA`,
   link: "https://db-diary-ee778.web.app",
-} as CardData;
+} as ItemData;
 
 const dbReactD3Sorting = {
   images: ["/images/db-react-d3-sorting.png"],
@@ -91,7 +91,7 @@ const dbReactD3Sorting = {
   description: `Visualizes sorting algorithms using React and D3.
   Uses D3, React, TypeScript, Nextjs, MaterialUI`,
   link: "https://db-react-d3.web.app/sorting",
-} as CardData;
+} as ItemData;
 
 const cxBookmarkHelper = {
   images: [
@@ -103,7 +103,7 @@ const cxBookmarkHelper = {
   description: `A bookmark helping chrome extension for my personal everyday use.
   Uses ChromeExtension API, JavaScript`,
   link: "https://chrome.google.com/webstore/detail/cx-bookmark-helper/bhfhaohjmlicimihnipmfjpdmjcehdmg?hl=en",
-} as CardData;
+} as ItemData;
 
 const sokobanDelta = {
   images: ["/images/sokoban-delta-1.webp"],
@@ -116,7 +116,7 @@ Programmed as a hybrid web application.
 Uses JavaScript, Java, Android
 `,
   link: "https://play.google.com/store/apps/details?id=com.delta.sokoban",
-} as CardData;
+} as ItemData;
 
 const index = () => (
   <>
@@ -126,16 +126,16 @@ const index = () => (
     </Helmet>
     <h1>Welcome to the demo page by Delta Boukensha </h1>
     <p>
-      A portfolio of some of my projects. For more projects see{" "}
+      A page for all my demo projects. For more projects see
       <Button href="https://github.com/deltaboukensha">My GitHub</Button> page
     </p>
-    <Masonry columns={{ xs: 1, sm: 2, md: 3, lg: 4, xl: 5 }} spacing={0}>
-      {renderCard(dbDiary)}
-      {renderCard(cxBookmarkHelper)}
-      {renderCard(sokobanDelta)}
-      {renderCard(dbWebGlRipples)}
-      {renderCard(dbUnityBunny)}
-      {renderCard(dbReactD3Sorting)}
+    <Masonry columns={{ xs: 1, sm: 2, md: 3, lg: 4, xl: 5 }} spacing={1}>
+      {renderItem(dbDiary)}
+      {renderItem(cxBookmarkHelper)}
+      {renderItem(sokobanDelta)}
+      {renderItem(dbWebGlRipples)}
+      {renderItem(dbUnityBunny)}
+      {renderItem(dbReactD3Sorting)}
     </Masonry>
   </>
 );
