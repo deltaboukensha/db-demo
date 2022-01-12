@@ -1,0 +1,45 @@
+{
+  "name": "db-demo",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "format": "prettier . --write",
+    "dev": "next dev",
+    "build": "next build",
+    "export": "next export -o .dist",
+    "deploy": "firebase deploy",
+    "publish": "npm run build && npm run export && npm run deploy"
+  },
+  "author": "DeltaBoukensha",
+  "license": "ISC",
+  "dependencies": {
+    "@date-io/dayjs": "^1.3.13",
+    "@emotion/react": "^11.7.1",
+    "@emotion/styled": "^11.6.0",
+    "@mui/icons-material": "^5.2.5",
+    "@mui/lab": "^5.0.0-alpha.63",
+    "@mui/material": "^5.2.7",
+    "@mui/styles": "^5.2.3",
+    "@types/next": "^9.0.0",
+    "@types/react": "^17.0.15",
+    "@types/react-dom": "^17.0.9",
+    "next": "^11.0.1",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-helmet": "^6.1.0"
+  },
+  "devDependencies": {
+    "@types/jest": "^26.0.24",
+    "@types/node": "^16.4.7",
+    "@types/react-helmet": "^6.1.2",
+    "@typescript-eslint/eslint-plugin": "^4.28.5",
+    "@typescript-eslint/parser": "^4.28.5",
+    "eslint": "^7.31.0",
+    "eslint-config-next": "^11.0.1",
+    "firebase-tools": "^9.23.3",
+    "prettier": "^2.3.2",
+    "ts-loader": "^9.2.4",
+    "ts-node": "^10.1.0",
+    "typescript": "^4.3.5"
+  }
+}
