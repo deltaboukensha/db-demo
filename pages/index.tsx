@@ -26,24 +26,21 @@ const renderItem = (itemData: ItemData) => {
     setImageIndex((imageIndex + 1) % itemData.images.length);
 
   return (
-    <Stack>
+    <Stack className="mouseHover">
       <Zoom in={true}>
-        <Paper elevation={3}>
+        <Paper
+          elevation={3}
+          sx={{
+            "&:hover": {
+              transform: "translateY(-1em) !important",
+            },
+          }}
+        >
           <div
             style={{ position: "relative", width: "100%", height: "256px" }}
             onClick={() => nextImage()}
           >
             {renderImage(itemData.images[imageIndex])}
-            {/* {cardData.images.length > 1 && (
-              <Fab
-                size="small"
-                color="secondary"
-                style={{ position: "absolute", top: "50%", right: "5px" }}
-                onClick={() => nextImage()}
-              >
-                <NavigateNextIcon></NavigateNextIcon>
-              </Fab>
-            )} */}
           </div>
           <Box padding={"1em"}>
             <Typography gutterBottom variant="h5" component="div">
