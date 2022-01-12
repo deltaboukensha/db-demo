@@ -70,7 +70,7 @@ const dbUnityBunny = {
   title: "db-unity-bunny",
   description: `A Unity C# game project I started together with my girl friend featuring bunny's
   The goal of the game is yet to be decided`,
-  link: "https://deltaboukensha.github.io/db-unity-bunny",
+  link: "https://db-unity-bunny.web.app",
 } as ItemData;
 
 const dbDiary = {
