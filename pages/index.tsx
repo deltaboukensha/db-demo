@@ -32,7 +32,7 @@ const renderItem = (itemData: ItemData) => {
           elevation={3}
           sx={{
             "&:hover": {
-              backgroundColor: "#F5F8FA"
+              backgroundColor: "#F5F8FA",
             },
           }}
         >
@@ -87,7 +87,18 @@ const dbReactD3Sorting = {
   title: "db-react-d3-sorting",
   description: `Visualizes sorting algorithms using React and D3.
   Uses D3, React, TypeScript, Nextjs, MaterialUI`,
-  link: "https://db-react-d3.web.app/sorting",
+  link: "https://db-react-d3.web.app/sorting.html",
+} as ItemData;
+
+const dbReactD3Covid = {
+  images: [
+    "/images/db-react-d3-covid-1.png",
+    "/images/db-react-d3-covid-2.png",
+  ],
+  title: "db-react-d3-covid",
+  description: `Visualizes a geographical chart of Covid cases using React and D3.
+  Uses D3, React, TypeScript, Nextjs, MaterialUI`,
+  link: "https://db-react-d3.web.app/covid.html",
 } as ItemData;
 
 const cxBookmarkHelper = {
@@ -128,6 +139,7 @@ const index = () => (
     </p>
     <Masonry columns={{ xs: 1, sm: 2, md: 3, lg: 4, xl: 5 }} spacing={1}>
       {renderItem(dbDiary)}
+      {renderItem(dbReactD3Covid)}
       {renderItem(cxBookmarkHelper)}
       {renderItem(sokobanDelta)}
       {renderItem(dbWebGlRipples)}
