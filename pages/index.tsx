@@ -126,6 +126,15 @@ Uses JavaScript, Java, Android
   link: "https://play.google.com/store/apps/details?id=com.delta.sokoban",
 } as ItemData;
 
+const grappleOverTitan = {
+  images: ["/images/grapple-over-titan-1.png"],
+  title: "GrappleOverTitan",
+  description: `
+A Unity C# game inspired by the popular anime "Attack On Titan". Features grappling hooks and death animation.
+`,
+  link: "https://grapple-over-titan.web.app",
+} as ItemData;
+
 const index = () => (
   <>
     <Helmet>
@@ -145,6 +154,7 @@ const index = () => (
       {renderItem(dbWebGlRipples)}
       {renderItem(dbUnityBunny)}
       {renderItem(dbReactD3Sorting)}
+      {renderItem(grappleOverTitan)}
     </Masonry>
   </>
 );
